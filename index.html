@@ -2,7 +2,7 @@
 <html>
 <head>
 	<style>
-		.vid {
+		.div-vid {
 			position: absolute;
 			top: 50%;
 			left: 50%;
@@ -14,18 +14,37 @@
 
 	<title>ice</title>
 	<link rel="icon" type="image/x-icon" href="favicon.ico">
+	<link rel="stylesheet" href="styles.css">
+
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+	
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@600&display=swap" rel="stylesheet">
+
+	<script src="scripts.js"></script> 
 </head>
 <body>
-	<div class="vid">
-		<video width="320" height="240" autoplay controls loop>
-			<source id="videoSrc" src="media/8zkquqiparr81.mp4" type="video/mp4">
+	<div id="bottom_left_corner_container">
+		<button id="bottom_left_corner_button">
+			<img src="media/hutaosmall.png" style="transition-duration: 0.4s; width: 215px; height: 171px;" id="bottom_left_corner_image"></img>
+		</button>
+
+		<div id="bottom_left_corner_link">
+			<h6 style="margin-top: 0; margin-bottom: 0; border: none;">art by</h6><a href="https://twitter.com/weijunske/status/1364051582363426817">@weijunske</a>
+		</div>
+	</div>
+
+	<div class="div-vid">
+		<video src="" width="320" height="240" autoplay controls loop id="video_src">
+			<!--<source id="video_src" src="media/video/1.mp4" type="video/mp4">-->
 			Your browser does not support the video tag.
 		</video>
 	</div>
 
 	<script>
-		vid = document.getElementById("videoSrc");
-		vid.src = "media/" + (Math.floor(Math.random() * 8)) + ".mp4";
+		vid = document.getElementById("video_src");
+		vid.src = "media/video/" + (Math.floor(Math.random() * 8)) + ".mp4";
 	</script>
 </body> 
 </html>
