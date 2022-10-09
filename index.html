@@ -12,15 +12,17 @@
 	<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@600&display=swap" rel="stylesheet">
 
 	<script src="scripts.js"></script> 
+	<script src="tabs.js"></script> 
 </head>
 <body>
 	<div id="nav_bar">
-		<a id="homeLink" class="nav-button active">home</a>
+		<a id="tab_home" class="nav-button active" onclick="tab(this)">home</a>
+		<a id="tab_links" class="nav-button" onclick="tab(this)">links</a>
 	</div>
 	
 	<div id="bottom_left_corner_container">
 		<button id="bottom_left_corner_button">
-			<img src="media/hutaosmall.png" style="transition-duration: 0.4s; width: 215px; height: 171px;" id="bottom_left_corner_image"></img>
+			<img oncontextmenu="return false;" src="media/hutaosmall.png" style="transition-duration: 0.4s; width: 215px; height: 171px;" id="bottom_left_corner_image"></img>
 		</button>
 
 		<div id="bottom_left_corner_link">
@@ -28,10 +30,36 @@
 		</div>
 	</div>
 
-	<div class="center-main-image">
+	<div class="class-home" id="scroll_notif">
+		<h1>more stuff below</h1>
+	</div>
+
+	<div class="class-home" id="center-main-image">
 		<video autoplay loop muted playsinline>
 			<source src="media/out.webm" type="video/webm">
 		</video>
+	</div>
+
+	<div class="class-home" id="collection-sections">
+		<div class="section-content">
+			<h1 class="main-section-header">Lorem ipsum</h1>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+			Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+			Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.<br>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+			Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+			Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.<br>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+			Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+			Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+			<div class="main-section-footer">
+				<img src="media/Alulasmall.gif" class="circle-masked-image" style="image-rendering: crisp-edges; max-width: 13%; height: auto;">
+			</div>
+		</div>
+	</div>
+
+	<div class="class-links" id="collection-links" style="display:none;">
+		<h1>:(</h1>
 	</div>
 </body> 
 </html>
