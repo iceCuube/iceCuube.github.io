@@ -1,19 +1,7 @@
-var changeVol = function(audioObj, vol)
-{
-	audioObj.volume = vol;
-	return audioObj;
-};
-
 var i = 0;
 var index = 0;
 var prevIndex = -1;
 var hideTiming = null;
-
-
-/*
-var arrAudio = [];
-for(var j=0;j<13;j++)
-	arrAudio.push(changeVol(new Audio("sounds/hutao_jp_" + (j+1) + ".ogg"), 0.2));*/
 
 var arrAudio = [
 	new Audio("data:audio/ogg;base64,T2dnUwACAAAAAAAAAABxuP7pAAAAAIuAoI8BE09wdXNIZWFkAQE4AYC7AAAAAABPZ2dTAAAAAAAAAAAAAHG4/ukBAAAAifBErgE+T3B1c1RhZ3MNAAAATGF2ZjU5LjMxLjEwMAEAAAAdAAAAZW5jb2Rlcj1MYXZjNTkuNDMuMTAwIGxpYm9wdXNPZ2dTAASsOQAAAAAAAHG4/ukCAAAARWwJlxAmOigsKi0qIyIlICEhIh4aeID1SU2FDxMoEo5HJh5znyZQyQ9Kb2L1xNxQyUBFAU+YKpDOyP54r1f9+VYDNayJ/PfJjdANvEyEzx+7tLWH/v9TNlZW6/3ETqg1+i5K8+OMptEZK8wMSuBG4zrIG4OLeLU7mvjxHwnIS5GMUo4sew3poyd9tdwG2qry+V66viDHaxJh5rmd5Hi3LDOZC6csNmG2STXWqY76+TsklS0fMgbhNU8zrPm1R1V3C1Od87xNObLSeD+BrBeLkf5mYp4zHCFnFgeHTEzu2bveTkdfWLO9Pcg2ysyT50UL0a09eD+Bq1bu0HyAeeab1ZtOxH+E1aQygd0jOJ3xZbX2fJdYyNUuc2TGoUio1UyAeD9/WzBGNGJIbD59F3FW1hcxaa2AJK2Vu1bGMaJBzp2V1i5fH5kCaj1reAZvy2gZTxMEgeSFyO+D5zEhizF3xKK6w4h3EYVIF/CllL14P1WXM1FiFzb00sDESaLmL6fUSqsrBM/nVynXOJYiQwVZeD6vxQULonTM2ZH/6xmIZBfL3qSQVLeAWWrJHX6zOunNvWwqMHg+Ai21VXKtarp4eLNX01zEMuvV86Wsi5JJoBbCZIsMeDs3SOWQ0UKztHKlCHmMql2Lx4avuY1enWobqMjH5KmEeDfItjat5RDEVP0Af6WCM8QqHSj8J2u0UxDqhVD22M7deDCQmATvrFT9n1k8K9CTpTBJk3g+um3V1u89LI15jmoEK3gm7z8cmE6u1/D09cm5uXd3lrYgKMwT6NO18sPDaXgNsITXmJnHTfXx7dSusWpeOP/NXD3+i+0Z"),
@@ -33,17 +21,16 @@ var arrAudio = [
 	
 arrAudio.forEach((a) => {
 	a.crossOrigin="anonymous";
-	a.volume = 0.2;
+	a.volume = 0.15;
 });
 
 window.onload = (e) => {
 	var button = document.getElementById("bottom_left_corner_button");
 	var img = document.getElementById("bottom_left_corner_image");
 	var tag = document.getElementById("bottom_left_corner_link");
-
-	button.onclick = function()
+	
+	playRandomAudio = function()
 	{
-		//arrAudio[i].play();
 		do
 		{
 			index = Math.floor(Math.random() * arrAudio.length);
@@ -56,7 +43,12 @@ window.onload = (e) => {
 			i = 0;
 		else
 			i++;
+
+		return false;
 	}
+
+	button.onclick = playRandomAudio;
+	button.oncontextmenu = playRandomAudio;
 
 	button.onmousedown = function()
 	{
