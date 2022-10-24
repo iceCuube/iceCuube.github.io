@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	
+
 	<title>ice</title>
 	<link rel="icon" type="image/x-icon" href="favicon.ico">
 	<link rel="stylesheet" href="styles.css">
@@ -36,11 +36,23 @@
 		<h1>more stuff below</h1>
 	</div>
 
+
+
 	<div class="class-home" id="center-main-image">
 		<video autoplay loop muted playsinline width="460" height="512">
-			<source src="media/out.webm" type="video/webm">
+			<source id="vidSrc" src="media/out.webm" type="video/webm">
 		</video>
 	</div>
+	<script>
+		// if video fails to load
+
+		document.getElementById("vidSrc").addEventListener("error", () => {
+			console.log("vid failed to load");
+			document.getElementById("center-main-image").innerHTML = "<img src='media/out.gif'/>";
+		});
+	</script>
+
+
 
 	<div class="class-home" id="collection-sections">
 		<div class="section-content">
