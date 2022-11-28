@@ -1,3 +1,25 @@
+@font-face {
+	font-family: 'icomoon';
+	src: url('media/icomoon.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+	font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	/* use !important to prevent issues with browser extensions that change fonts */
+	font-family: 'icomoon' !important;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+  
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
 body {
 	font-family: 'Roboto Condensed', sans-serif;
 
@@ -35,8 +57,17 @@ h1,h2,h3,h4,h5,h6
 	border-bottom: 2px solid rgb(220, 220, 220);
 }
 
+.bg-stripes
+{
+	position: fixed;
+	bottom: 50%;
+	right: 50%;
+	z-index: -1;
+	scale: 200%;
+}
+
 #collection-sections { margin-bottom: 250px; }
-#collection-links h1 { border: none;}
+#collection-links h1 { border: none }
 #collection-links
 {
 	position:absolute;
@@ -45,7 +76,6 @@ h1,h2,h3,h4,h5,h6
 	transform: translate(-50%, -50%);
 
 	text-align: center;
-	font-size: 800%;
 	color: rgba(255, 255, 255, 0.4);
 }
 
@@ -62,7 +92,6 @@ h1,h2,h3,h4,h5,h6
 
 	margin-right: auto;
 	margin-left: auto;
-	margin-top: 4em;
 	
 	box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.6);
 }
@@ -89,6 +118,26 @@ h1,h2,h3,h4,h5,h6
 	object-fit: cover;
 	border: 0.3em solid white;
 	border-radius: 50%;
+}
+
+.links-container
+{
+	display: flex;
+}
+
+.links-container .link-button
+{
+	font-family: icomoon;
+	font-size: 4em;
+	/*background-color: rgb(59, 59, 59);*/
+	border-radius: 0.3em;
+
+	text-decoration: none;
+	text-shadow: 0 0 0.15em black;
+	color: white;
+
+	margin: 0 0.3em 0 0.3em;
+	padding: 0.2em 0.4em 0.2em 0.4em;
 }
 
 .nav-button {
@@ -206,4 +255,17 @@ h1,h2,h3,h4,h5,h6
 #scroll_notif h1
 {
 	border: none;
+}
+
+.icon-twitter:before {
+	content: "\ea96";
+}
+.icon-youtube:before {
+	content: "\ea9d";
+}
+.icon-twitch:before {
+	content: "\ea9f";
+}
+.icon-github:before {
+	content: "\eab0";
 }

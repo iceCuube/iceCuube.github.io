@@ -29,7 +29,7 @@ window.onload = (e) => {
 	var img = document.getElementById("bottom_left_corner_image");
 	var tag = document.getElementById("bottom_left_corner_link");
 	
-	playRandomAudio = function()
+	hitTao = function()
 	{
 		do
 		{
@@ -47,8 +47,8 @@ window.onload = (e) => {
 		return false;
 	}
 
-	button.onclick = playRandomAudio;
-	button.oncontextmenu = playRandomAudio;
+	button.onclick = hitTao;
+	button.oncontextmenu = hitTao;
 
 	button.onmousedown = function()
 	{
